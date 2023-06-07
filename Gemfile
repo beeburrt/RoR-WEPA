@@ -38,3 +38,7 @@ end
 group :production do
   gem "pg"
 end
+
+gem "dockerfile-rails", ">= 1.4", :group => :development
+
+gem "redis", "~> 5.0"
