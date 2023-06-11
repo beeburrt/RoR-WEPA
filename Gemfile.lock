@@ -106,7 +106,7 @@ GEM
     io-console (0.6.0)
     irb (1.6.4)
       reline (>= 0.3.0)
-    jaro_winkler (1.5.4)
+    jaro_winkler (1.5.6)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -115,6 +115,8 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
+    language_server-protocol (3.17.0.3)
+    lint_roller (1.0.0)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -142,8 +144,9 @@ GEM
     nokogiri (1.15.2-x86_64-linux)
       racc (~> 1.4)
     parallel (1.23.0)
-    parser (3.2.2.1)
+    parser (3.2.2.3)
       ast (~> 2.4.1)
+      racc
     pg (1.5.3)
     public_suffix (5.0.1)
     puma (5.6.5)
@@ -192,7 +195,7 @@ GEM
     reverse_markdown (2.1.1)
       nokogiri
     rexml (3.2.5)
-    rubocop (1.51.0)
+    rubocop (1.52.0)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
@@ -202,8 +205,11 @@ GEM
       rubocop-ast (>= 1.28.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.28.1)
+    rubocop-ast (1.29.0)
       parser (>= 3.2.1.0)
+    rubocop-performance (1.18.0)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
     selenium-webdriver (4.9.1)
@@ -226,6 +232,9 @@ GEM
       thor (~> 1.0)
       tilt (~> 2.0)
       yard (~> 0.9, >= 0.9.24)
+    solargraph-rails (1.1.0)
+      activesupport
+      solargraph
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -234,10 +243,23 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.3-x86_64-linux)
+    standard (1.29.0)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.0)
+      rubocop (~> 1.52.0)
+      standard-custom (~> 1.0.0)
+      standard-performance (~> 1.1.0)
+    standard-custom (1.0.1)
+      lint_roller (~> 1.0)
+    standard-performance (1.1.0)
+      lint_roller (~> 1.0)
+      rubocop-performance (~> 1.18.0)
+    standardrb (1.0.1)
+      standard
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     thor (1.2.2)
-    tilt (2.1.0)
+    tilt (2.2.0)
     timeout (0.3.2)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
@@ -280,8 +302,10 @@ DEPENDENCIES
   redis (~> 5.0)
   selenium-webdriver
   solargraph
+  solargraph-rails
   sprockets-rails
   sqlite3
+  standardrb
   stimulus-rails
   turbo-rails
   tzinfo-data
