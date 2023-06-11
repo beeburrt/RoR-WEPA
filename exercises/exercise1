@@ -1,0 +1,59 @@
+irb(main):013:0> bd = Brewery.new(name: "BrewDog", year: 2007)
+=>
+#<Brewery:0x00007f12f0a27308
+...
+irb(main):014:0> bd.save
+  TRANSACTION (0.1ms)  begin transaction
+  Brewery Create (0.2ms)  INSERT INTO "breweries" ("name", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "BrewDog"], ["year", 2007], ["created_at", "2023-06-11 21:45:10.841898"], ["updated_at", "2023-06-11 21:45:10.841898"]]
+  TRANSACTION (59.4ms)  commit transaction
+=> true
+irb(main):015:0> bd
+=>
+#<Brewery:0x00007f12f0a27308
+ id: 7,
+ name: "BrewDog",
+ year: 2007,
+ created_at: Sun, 11 Jun 2023 21:45:10.841898000 UTC +00:00,
+ updated_at: Sun, 11 Jun 2023 21:45:10.841898000 UTC +00:00>
+irb(main):016:0>
+
+
+irb(main):024:0> bd.beers.create(name: "Punk IPA", style: "IPA", brewery_id: bd.id)
+  TRANSACTION (0.0ms)  begin transaction
+  Beer Create (0.4ms)  INSERT INTO "beers" ("name", "style", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Punk IPA"], ["style", "IPA"], ["brewery_id", 7], ["created_at", "2023-06-11 21:54:43.825043"], ["updated_at", "2023-06-11 21:54:43.825043"]]
+  TRANSACTION (61.0ms)  commit transaction
+=>
+#<Beer:0x00007f12f043eec8
+ id: 14,
+ name: "Punk IPA",
+ style: "IPA",
+ brewery_id: 7,
+ created_at: Sun, 11 Jun 2023 21:54:43.825043000 UTC +00:00,
+ updated_at: Sun, 11 Jun 2023 21:54:43.825043000 UTC +00:00>
+irb(main):025:0>
+
+
+irb(main):028:0> bd
+=>
+#<Brewery:0x00007f12f0a27308
+ id: 7,
+ name: "BrewDog",
+ year: 2007,
+ created_at: Sun, 11 Jun 2023 21:45:10.841898000 UTC +00:00,
+ updated_at: Sun, 11 Jun 2023 21:45:10.841898000 UTC +00:00>
+irb(main):029:0>
+
+
+irb(main):031:0> b = bd.beers.new(name: "Nanny State", style: "low alcohol", brewery_id: bd.id)
+=>
+#<Beer:0x00007f12f0455150
+...
+irb(main):032:0> b.save()
+  TRANSACTION (0.0ms)  begin transaction
+  Beer Create (0.3ms)  INSERT INTO "beers" ("name", "style", "brewery_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Nanny State"], ["style", "low alcohol"], ["brewery_id", 7], ["created_at", "2023-06-11 22:04:10.638009"], ["updated_at", "2023-06-11 22:04:10.638009"]]
+  TRANSACTION (58.2ms)  commit transaction
+=> true
+irb(main):033:0>
+
+
+
