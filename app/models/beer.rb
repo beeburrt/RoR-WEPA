@@ -4,10 +4,7 @@ class Beer < ApplicationRecord
   has_many :ratings
 
   def average_rating
-    sum = 0
-    ratings.each do |rating|
-      sum += rating.score
-    end
+    sum = ratings.map { |r| r[:score] }.reduce(0) { |s, i| s + i }
     count = ratings.count
     (sum / count).to_f
   end
