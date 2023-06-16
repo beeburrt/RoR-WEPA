@@ -1,7 +1,10 @@
 <h2>Create New Rating</h2>
 
-<%= form_for(@rating) do |f| %>
-  beer id: <%= f.number_field :beer_id %>
-  score: <%= f.number_field :score %>
-  <%= f.submit %>
+<%= form_for(@rating) do |form| %>
+  beer:
+  <%= form.select :beer_id, options_from_collection_for_select(@beers, :id, :to_s) %>
+  score:
+  <%= form.number_field :score %>
+
+  <%= form.submit %>
 <% end %>

@@ -4,6 +4,10 @@
   Total number of ratings: <%= @ratings.count %>
 </p>
 
+<p>
+  <%= link_to "Add rating", ratings_new_path %>
+</p>
+
 <ul>
   <% @ratings.each do |rating| %>
     <li><%= rating %></li>

@@ -97,6 +97,8 @@ GEM
     dockerfile-rails (1.4.1)
       rails
     e2mmap (0.1.0)
+    erb-formatter (0.4.3)
+      syntax_tree (~> 6.0)
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -150,6 +152,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.3)
+    prettier_print (1.2.1)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -266,6 +269,8 @@ GEM
       standard
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    syntax_tree (6.1.1)
+      prettier_print (>= 1.2.0)
     thor (1.2.2)
     tilt (2.2.0)
     timeout (0.3.2)
@@ -303,6 +308,7 @@ DEPENDENCIES
   capybara
   debug
   dockerfile-rails (>= 1.4)
+  erb-formatter
   importmap-rails
   jbuilder
   pg
