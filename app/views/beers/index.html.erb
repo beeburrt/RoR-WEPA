@@ -2,9 +2,7 @@
 
 <h1>Beers</h1>
 
-<p>
-  <%= link_to "To all breweries", breweries_path %>
-</p>
+<%= link_to "Add New Beer", new_beer_path %>
 
 <div id="beers">
   <% @beers.each do |beer| %>
@@ -12,5 +10,3 @@
     <hr/>
   <% end %>
 </div>
-
-<%= link_to "New beer", new_beer_path %>
