@@ -3,10 +3,12 @@
     <%= brewery.name %>
   </h2>
   <p>
-    <i>Established in <%= brewery.year %></i>
+    <i>Established in
+      <%= brewery.year %></i>
   </p>
   <p>
-    Number of beers: <%= brewery.beers.count %>
+    Number of beers:
+    <%= brewery.beers.count %>
   </p>
   <p>
     <ul>
@@ -16,5 +18,14 @@
         </li>
       <% end %>
     </ul>
+
+    <p>
+      <% if brewery.ratings.empty? %>
+        <%= "No ratings yet" %>
+      <% else %>
+        <%= "Brewery has #{pluralize(brewery.ratings.count, "rating")} | Average rating: #{brewery.average_rating()}" %>
+      <% end %>
+    </p>
+
   </p>
 </div>
