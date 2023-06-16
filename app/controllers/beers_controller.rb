@@ -13,10 +13,14 @@ class BeersController < ApplicationController
   def new
     @beer = Beer.new
     @breweries = Brewery.all
+    @styles = ['Weizen', 'Lager', 'Pale ale', 'IPA', 'Porter', 'Low alcohol']
   end
 
   # GET /beers/1/edit
-  def edit; end
+  def edit
+    @breweries = Brewery.all
+    @styles = ['Weizen', 'Lager', 'Pale ale', 'IPA', 'Porter', 'Low alcohol']
+  end
 
   # POST /beers or /beers.json
   def create

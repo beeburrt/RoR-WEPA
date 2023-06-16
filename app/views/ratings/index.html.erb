@@ -1,15 +1,26 @@
-<h2>All Beer Ratings</h2>
+<h2>Beer Ratings</h2>
 
 <p>
-  Total number of ratings: <%= @ratings.count %>
+  Total number of ratings:
+  <%= @ratings.count %>
 </p>
 
 <p>
-  <%= link_to "Add rating", ratings_new_path %>
+  <%= link_to "Add rating", new_rating_path %>
 </p>
 
 <ul>
   <% @ratings.each do |rating| %>
-    <li><%= rating %></li>
+    <li>
+      <%= render rating %>
+      <%= button_to "delete",
+      rating,
+      method: :delete,
+      data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } %>
+    </li>
+    <hr/>
   <% end %>
 </ul>
