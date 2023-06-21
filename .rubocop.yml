@@ -14,7 +14,7 @@ AllCops:
     - "*.gemspec"
     - bundler/**/*
     - vendor/bundle/**/* # travis with --deployment
-  TargetRubyVersion: 3.1.2
+  TargetRubyVersion: 3.2.2
   NewCops: enable
 
 Style/PercentLiteralDelimiters:
@@ -69,3 +69,6 @@ Naming/MethodParameterName:
 
 Metrics/BlockLength:
   Enabled: false
+
+Metrics/MethodLength:
+  Max: 15
