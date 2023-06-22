@@ -1,9 +1,28 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @user %>
+<div>
+  <p>
+    <strong>Username:</strong>
+    <%= current_user.username %>
+  </p>
+  <% unless current_user.ratings.empty? %>
+    <p>
+      <%= "Created #{pluralize(@user.ratings.count, "rating")}, average rating: #{@user.average_rating()}" %>
+    </p>
+    <ul>
+      <% @ratings.each do |rating| %>
+        <li>
+          <%= rating %>
+          <!-- <%= link_to "Delete",  %> -->
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
 
 <div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
+  <%= link_to "Edit this user", edit_user_path(@user) %>
+  |
   <%= link_to "Back to users", users_path %>
 
   <%= button_to "Destroy this user", @user, method: :delete %>

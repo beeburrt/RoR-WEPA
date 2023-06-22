@@ -28,7 +28,6 @@ group :development do
   gem 'web-console'
   gem "solargraph"
   gem "solargraph-rails"
-  gem "erb-formatter"
 end
 
 group :test do

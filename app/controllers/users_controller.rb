@@ -8,6 +8,8 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
+    @user = current_user if current_user
+    @ratings = @user.ratings
   end
 
   # GET /users/new

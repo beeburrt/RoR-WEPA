@@ -12,14 +12,7 @@
 <ul>
   <% @ratings.each do |rating| %>
     <li>
-      <%= render rating %>
-      <%= button_to "delete",
-      rating,
-      method: :delete,
-      data: {
-        turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
-      } %>
+      <%= rating %>
     </li>
     <hr/>
   <% end %>
