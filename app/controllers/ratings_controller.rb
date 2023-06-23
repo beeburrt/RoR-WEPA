@@ -18,7 +18,7 @@ class RatingsController < ApplicationController
 
   def destroy
     rating = Rating.find(params[:id])
-    rating.delete
+    rating.delete # use destroy here?
     redirect_to ratings_path
   end
 

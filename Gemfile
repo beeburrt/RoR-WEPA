@@ -9,7 +9,6 @@ gem 'rails', '~> 7.0.5'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
-gem "wirble"
 
 # gem "sqlite3", "~> 1.4"
 
@@ -28,6 +27,7 @@ group :development do
   gem 'web-console'
   gem "solargraph"
   gem "solargraph-rails"
+  gem "wirble"
 end
 
 group :test do

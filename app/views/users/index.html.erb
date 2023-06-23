@@ -6,7 +6,11 @@
   <% @users.each do |user| %>
     <%= render user %>
     <p>
-      <%= link_to "Show this user", user %>
+      <% if current_user == user %>
+      <%= link_to "Show this user", current_user %>
+      <% else %>
+
+      <% end %>
     </p>
   <% end %>
 </div>

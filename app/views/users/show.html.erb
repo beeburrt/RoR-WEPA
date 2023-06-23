@@ -7,13 +7,13 @@
   </p>
   <% unless current_user.ratings.empty? %>
     <p>
-      <%= "Created #{pluralize(@user.ratings.count, "rating")}, average rating: #{@user.average_rating()}" %>
+      <%= "Created #{pluralize(@user.ratings.count, "rating")}, average rating: #{@user.average_rating}" %>
     </p>
     <ul>
       <% @ratings.each do |rating| %>
         <li>
           <%= rating %>
-          <!-- <%= link_to "Delete",  %> -->
+          <%= link_to "Delete", ratings_path %>
         </li>
       <% end %>
     </ul>

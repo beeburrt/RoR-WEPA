@@ -9,3 +9,5 @@ Rails.application.routes.draw do
 
   root "breweries#index"
 end
+
+# see: localhost:3000/rails/info/routes
