@@ -20,7 +20,7 @@ group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
   gem "sqlite3"
   gem "pry-byebug"
-  gem "standard"
+  gem "rubocop", ">= 1.53.0"
 end
 
 group :development do

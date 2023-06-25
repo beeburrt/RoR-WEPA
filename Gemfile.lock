@@ -120,7 +120,6 @@ GEM
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     language_server-protocol (3.17.0.3)
-    lint_roller (1.0.0)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -206,10 +205,11 @@ GEM
     reverse_markdown (2.1.1)
       nokogiri
     rexml (3.2.5)
-    rubocop (1.52.0)
+    rubocop (1.53.0)
       json (~> 2.3)
+      language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
-      parser (>= 3.2.0.0)
+      parser (>= 3.2.2.3)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml (>= 3.2.5, < 4.0)
@@ -218,9 +218,6 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.29.0)
       parser (>= 3.2.1.0)
-    rubocop-performance (1.18.0)
-      rubocop (>= 1.7.0, < 2.0)
-      rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
     selenium-webdriver (4.9.1)
@@ -254,17 +251,6 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.3-x86_64-linux)
-    standard (1.29.0)
-      language_server-protocol (~> 3.17.0.2)
-      lint_roller (~> 1.0)
-      rubocop (~> 1.52.0)
-      standard-custom (~> 1.0.0)
-      standard-performance (~> 1.1.0)
-    standard-custom (1.0.1)
-      lint_roller (~> 1.0)
-    standard-performance (1.1.0)
-      lint_roller (~> 1.0)
-      rubocop-performance (~> 1.18.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     syntax_tree (6.1.1)
@@ -314,12 +300,12 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.5)
   redis (~> 5.0)
+  rubocop (>= 1.53.0)
   selenium-webdriver
   solargraph
   solargraph-rails
   sprockets-rails
   sqlite3
-  standard
   stimulus-rails
   turbo-rails
   tzinfo-data
