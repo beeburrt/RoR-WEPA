@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
-    @user = current_user if current_user
+    @user = current_user unless current_user.nil?
     @ratings = @user.ratings
   end
 

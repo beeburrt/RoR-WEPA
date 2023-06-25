@@ -1,19 +1,20 @@
 <h2>Beer Ratings</h2>
 
 <p>
-  Total number of ratings:
+  Total ratings:
   <%= @ratings.count %>
-</p>
-
-<p>
-  <%= link_to "Add rating", new_rating_path %>
 </p>
 
 <ul>
   <% @ratings.each do |rating| %>
     <li>
       <%= rating %>
+      <%= link_to "#{rating.user.username}", user_path(rating.user) %>
     </li>
     <hr/>
   <% end %>
 </ul>
+
+<p>
+  <%= link_to "Add rating", new_rating_path %>
+</p>

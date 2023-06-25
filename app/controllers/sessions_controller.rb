@@ -1,11 +1,16 @@
 class SessionsController < ApplicationController
-  def new; end
+  def new
+    # /signin - signin_path
+  end
 
   def create
     user = User.find_by username: params[:username]
-    session[:user_id] = user.id unless user.nil?
-
-    redirect_to user
+    if user.nil?
+      redirect_to signin_path, notice: "User #{params[:username]} does not exist!"
+    else
+      session[:user_id] = user.id
+      redirect_to user, notice: "Welcome back!"
+    end
   end
 
   def destroy

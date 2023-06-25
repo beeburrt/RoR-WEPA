@@ -13,7 +13,12 @@
       <% @ratings.each do |rating| %>
         <li>
           <%= rating %>
-          <%= link_to "Delete", ratings_path %>
+          <%= link_to "Delete",
+          @user,
+          data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+          } %>
         </li>
       <% end %>
     </ul>

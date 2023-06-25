@@ -265,8 +265,6 @@ GEM
     standard-performance (1.1.0)
       lint_roller (~> 1.0)
       rubocop-performance (~> 1.18.0)
-    standardrb (1.0.1)
-      standard
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     syntax_tree (6.1.1)
@@ -321,7 +319,7 @@ DEPENDENCIES
   solargraph-rails
   sprockets-rails
   sqlite3
-  standardrb
+  standard
   stimulus-rails
   turbo-rails
   tzinfo-data
