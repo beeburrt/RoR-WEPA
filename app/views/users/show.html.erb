@@ -14,7 +14,7 @@
         <li>
           <%= rating %>
           <%= link_to "Delete",
-          @user,
+          user_path(rating.user),
           data: {
             turbo_method: :delete,
             turbo_confirm: "Are you sure?"
@@ -28,7 +28,7 @@
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %>
   |
-  <%= link_to "Back to users", users_path %>
+  <%= link_to "To users", users_path %>
 
   <%= button_to "Destroy this user", @user, method: :delete %>
 </div>

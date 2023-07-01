@@ -32,3 +32,8 @@ body {
 ul {
   list-style-type: none;
 }
+
+form input {
+  font-size: 16px;
+  padding: 5px 10px;
+}

@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
+    redirect_to users_path if current_user.nil?
     @user = current_user unless current_user.nil?
     @ratings = @user.ratings
   end
@@ -64,6 +65,7 @@ class UsersController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
+    @rater = @user
   end
 
   # Only allow a list of trusted parameters through.
